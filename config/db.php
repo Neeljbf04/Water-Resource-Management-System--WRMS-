@@ -2,7 +2,7 @@
 // Database connection settings
 $servername = "localhost";  // Or your server's IP
 $username = "root";         // Your database username
-$password = "root";         // Your database password
+$password = "1092";         // Your database password
 $dbname = "project_resource";  // Your database name
 
 // Log the incoming request
