@@ -10,10 +10,9 @@ This project focuses on providing a structured and scalable solution for handlin
 
 # 🚀 Features
 
-- 💧 Water resource monitoring
-- 📊 Data management and reporting
-- 👤 User authentication system
-- 🗂️ Database integration
+- 💧 Water resource monitoring and mapping
+- 📊 Data management (CRUD operations) and reporting
+- 🗂️ MySQL Database integration for records
 - 🔍 Search and filter functionality
 - 📈 Resource analysis and tracking
 - 🛠️ Modular and scalable architecture
@@ -29,16 +28,15 @@ This project focuses on providing a structured and scalable solution for handlin
 - JavaScript
 
 ## Backend
-- Java / Spring Boot
+- PHP
 
 ## Database
 - MySQL
 
 ## Tools & Technologies
 - Git & GitHub
-- JDBC
-- REST API
-- Maven
+- REST API / AJAX
+- PDO / MySQLi
 
 ---
 
@@ -47,14 +45,15 @@ This project focuses on providing a structured and scalable solution for handlin
 ```bash
 Water-Resource-Management-System--WRMS-/
 │
-├── src/
-├── database/
-├── frontend/
-├── backend/
-├── assets/
-├── README.md
-├── pom.xml
-└── screenshots/
+├── api/                   # API endpoints for frontend-backend communication
+├── assets/                # CSS, Images, Icons, and Videos
+├── components/            # Reusable UI components (header, footer)
+├── config/                # Database configuration (db.php)
+├── src/                   # Core PHP classes (River.php, Disaster.php)
+├── crud_operations.php    # Central file for CRUD functions
+├── index.php              # Main entry point / Dashboard
+├── map.php                # Map view for resources
+└── README.md              # Project documentation
 ```
 
 ---
@@ -75,31 +74,34 @@ cd Water-Resource-Management-System--WRMS-
 
 ## 3️⃣ Configure Database
 
-Create a MySQL database and update the database credentials in the configuration file.
+Create a MySQL database named `project_resource`.
 
-Example:
+Update the database credentials in `config/db.php`:
 
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/wrms
-spring.datasource.username=root
-spring.datasource.password=yourpassword
+```php
+<?php
+// config/db.php
+$servername = "localhost";
+$username = "root";
+$password = "yourpassword";
+$dbname = "project_resource";
 ```
+
+*Note: You may need to import your SQL schema to initialize the tables required by the system.*
 
 ---
 
 ## 4️⃣ Run the Project
 
-Using Maven:
+You can use XAMPP, WAMP, or PHP's built-in web server.
+
+Using PHP's built-in server:
 
 ```bash
-mvn spring-boot:run
+php -S localhost:8000
 ```
 
----
-
-# 📸 Screenshots
-
-Add project screenshots inside the `screenshots/` folder.
+Then, open your browser and navigate to `http://localhost:8000/`.
 
 ---
 
@@ -140,5 +142,3 @@ This project is licensed under the MIT License.
 
 Repository Link:  
 https://github.com/Neeljbf04/Water-Resource-Management-System--WRMS-
-
----
